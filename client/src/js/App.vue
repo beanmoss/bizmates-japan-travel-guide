@@ -83,8 +83,8 @@ export default {
               id: venue.id,
               name: venue.name,
               address: venue.location.address,
-              type: venue.categories[0].shortName,
-              image_url: `${venue.categories[0].icon.prefix}88.png`
+              type: venue.categories[0] ? venue.categories[0].shortName : '',
+              image_url: venue.categories[0] ? `${venue.categories[0].icon.prefix}88.png`: 'https://foursquare.com/img/categories/building/default_88.png'
             }
           })
           this.venue_overlay_show = false;
